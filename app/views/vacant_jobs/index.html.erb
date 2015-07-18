@@ -1,0 +1,25 @@
+<h1>Listing vacant_jobs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vacant_jobs.each do |vacant_job| %>
+  <tr>
+    <td><%= vacant_job.name %></td>
+    <td><%= vacant_job.description %></td>
+    <td><%= link_to 'Show', vacant_job %></td>
+    <td><%= link_to 'Edit', edit_vacant_job_path(vacant_job) %></td>
+    <td><%= link_to 'Destroy', vacant_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vacant job', new_vacant_job_path %>
